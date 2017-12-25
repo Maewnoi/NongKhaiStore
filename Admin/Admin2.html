@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>Create Promotion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui.css" />
+
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui-timepicker-addon.css" />
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="jquery-ui-sliderAccess.js"></script>
+
+<style>
+        h6 {
+            font-size: 15px;
+        }
+        .w3-myfont {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        </style>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+<div class="w3-bar w3-deep-orange w3-myfont">
+  <a class="w3-bar-item w3-hide-small" ><img src="logo1.png" width="90"></a>
+  <a class="w3-myfont "><H3>Nong Khai Store</H3><h6>เว็บไซต์แนะนำร้านค้า และส่วนลด ในจังหวัดหนองคาย</h6></a> 
+   <a href="Admin.html" class="w3-bar-item w3-button w3-hide-small">หน้าหลัก</a>
+  <a href="Admin2.html" class="w3-bar-item w3-button w3-hide-small">สร้างโปรโมชั่น</a>
+    <a href="Admin3.html" class="w3-bar-item w3-button w3-hide-small">หน้าร้าน</a>
+
+</div>
+<form action="./getpro.php" method="get">>
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+
+    <div class="w3-container">
+      <h3><b>Create Promotion</b></h3>
+
+    <div class="form-group">
+      <label for="usr">ชื่อโปรโมชั่น:</label>
+
+      <input type="text" name="name"class="form-control" >
+    </div>
+    <br>
+
+ 
+เริ่ม : <input type="date" name="st_time" /> 
+หมดเขต : <input type="date" name="ed_time"  /> 
+
+<div class="container"> 
+
+<br>
+
+    <div class="form-group">
+      <label for="comment">รายละเอียด</label><br>
+    <input type="text" name="des" class="w3-input w3-border" >
+    </div>
+ 
+</div>
+<br>
+<div class="form-group">
+      <label for="usr">ราคา:</label>
+      <input type="text" name="p"class="form-control" id="usr">
+      <label for="usr">จำนวนโปรโมชั่นที่เหลือ:</label>
+      <input type="text"name="s" class="form-control" >
+    </div>
+    <br>
+    <button class="w3-button w3-light-grey" type ="submit">submid</button>
+  <input type="button" class="w3-button w3-light-grey" value="Cancel">
+    </div>
+
+    <div class="w3-container">
+      <p></p>
+    </div>
+  </div>
+
+  <hr>
+</form>
+<footer class="w3-container w3-deep-orange w3-center w3-margin-top">
+  <p>322236 Web Application Programming</p>
+</footer>
+</body>
+</html>

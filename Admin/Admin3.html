@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title>Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui.css" />
+
+<link rel="stylesheet" media="all" type="text/css" href="jquery-ui-timepicker-addon.css" />
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="jquery-ui-sliderAccess.js"></script>
+
+<style>
+        h6 {
+            font-size: 15px;
+        }
+        .w3-myfont {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        </style>
+            <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Beyond Cafe Map</title>
+        <style>
+            html, body, #map-canvas {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+            }
+        </style>
+
+        <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBil-dACyKcpUg6N5vfajnyLtFNaQpVIus&sensor=SET_TO_TRUE_OR_FALSE">
+        </script>
+        <script>
+            function initialize() {
+              var myLatlng = new google.maps.LatLng(17.880264, 102.744150);
+              var mapOptions = {
+                zoom: 12,
+                center: myLatlng
+              }
+              var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            
+              var marker = new google.maps.Marker({
+                  position: myLatlng,
+                  map: map,
+                  title: 'Share Olanlab Com'
+              });
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+<body>
+<div class="w3-bar w3-deep-orange w3-myfont">
+  <a class="w3-bar-item w3-hide-small" ><img src="logo1.png" width="90"></a>
+  <a class="w3-myfont "><H3>Nong Khai Store</H3><h6>เว็บไซต์แนะนำร้านค้า และส่วนลด ในจังหวัดหนองคาย</h6></a> 
+   <a href="Admin.html" class="w3-bar-item w3-button w3-hide-small">หน้าหลัก</a>
+  <a href="Admin2.html" class="w3-bar-item w3-button w3-hide-small">สร้างโปรโมชั่น</a>
+    <a href="Admin3.html" class="w3-bar-item w3-button w3-hide-small">หน้าร้าน</a>
+
+</div>
+
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Grid -->
+<div class="w3-row ">
+  
+
+<!-- ภาพ -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="imgAdmin/beyond.png" style="width:100%">
+  </div>
+</div>
+
+<!-- ข้อมูลร้าน -->
+<div class="w3-col l7 ">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+    <div class="w3-container w3-white">
+      <h4><b>BEYOND CAFE</b></h4>
+      <p>CAKE.COFFEE.TEA @Vviang</p>
+      <p>Tell: 0956544412</p>
+      <p>Facebook : <a href="https://www.facebook.com/beyondcafeNK/">BEYOND CAFE l กาแฟ เค้ก หนองคาย Vviang</a></p>
+      <p>Line id :</p>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<!-- END GRID -->
+</div>
+<br>
+
+<!-- END w3-content -->
+</div>
+<hr>
+<AB class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Location</b></h1>
+</AB>
+<center><div id="map-canvas" style="width:80%;height:500px;"></div></center>
+
+<footer class="w3-container w3-deep-orange w3-center w3-margin-top">
+  <p>322236 Web Application Programming</p>
+</footer>
+</body>
+</html>

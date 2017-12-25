@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<title>ลงชื่อเข้าใช้</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<style>
+
+.warning {background-color: #ff9800;} /* Orange */
+.warning:hover {background: #e68a00;}
+.w3-myfont {
+    font-family: 'Kanit', sans-serif;
+}
+.w3-button {width:180px;}
+</style>
+<body>
+<script>
+
+  var bFbStatus = false;
+  var fbID = "";
+  var fbName = "";
+  var fbEmail = "";
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '368318706926701',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+function statusChangeCallback(response)
+{
+
+    if(bFbStatus == false)
+    {
+      fbID = response.authResponse.userID;
+
+        if (response.status == 'connected') {
+        getCurrentUserInfo(response)
+        } else {
+        FB.login(function(response) {
+          if (response.authResponse){
+          getCurrentUserInfo(response)
+          } else {
+          console.log('Auth cancelled.')
+          }
+        }, { scope: 'email' });
+        }
+    }
+
+
+    bFbStatus = true;
+}
+
+
+    function getCurrentUserInfo() {
+      FB.api('/me?fields=name,email', function(userInfo) {
+
+      fbName = userInfo.name;
+      fbEmail = userInfo.email;
+
+      $("#hdnFbID").val(fbID);
+      $("#hdnName ").val(fbName);
+      $("#hdnEmail").val(fbEmail);
+      $("#frmMain").submit();
+
+      });
+    }
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+
+</script>
+<header class="w3-container w3-deep-orange">
+    <table align="right">
+        <tr>
+            <td valign="top" width="180">      
+                    <label>Username</label>
+                    <input class="w3-input w3-border" name="first" type="text" >
+                    
+            </td>
+            <td  width="200">
+                <label>Password</label>
+                <input class="w3-input w3-border" name="first" type="text" >
+                <label>Forget your Password</label>
+            </td>
+            <td valign="middle" width="100">
+                    <button class="btn btn-warning w3-card-4" > Sign In </button>
+            </td>
+
+        </tr>
+    </table>
+
+
+</header>
+
+<table>
+    <tr>
+        <td width="50%">
+            <CENTER><img src="logo1.png" width="60%">
+            <br>
+            <h3 class="w3-myfont">Nong Khai Store </h3></CENTER>
+        </td>
+        
+        <td width="40%" >
+            <CENTER>
+            <div class="w3-container w3-twothird w3-margin-left" >
+                <h6 class="w3-myfont">สร้างบัญชีผู้ใช้ใหม่ สมัครฟรี <br>และไม่เสียค่าใช้บริการ</h6>
+            <form class="w3-container w3-card-4" width="100%">
+            <p>
+                <input class="w3-input w3-border" name="first" type="text" placeholder="Username">
+            </p>
+            <p>
+                <input class="w3-input w3-border" name="first" type="text" placeholder="Email">
+            </p>
+            <CENTER>
+            <p>
+                <input class="w3-radio" type="radio" name="gender" value="ลูกค้า" checked>
+                <label>ลูกค้า</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="w3-radio" type="radio" name="gender" value="female">
+                <label>ร้านค้า</label></p>
+            </CENTER>
+            <p>
+                <input class="w3-input w3-border" name="first" type="text" placeholder="Password">
+            </p>
+            <p>
+                <CENTER><button class="w3-button w3-section w3-deep-orange w3-ripple"> Sing Up </button></CENTER>
+            </p>
+
+            </form>
+
+             </div>
+            </CENTER>
+             <div class="w3-container w3-twothird w3-margin-left">
+            <p><CENTER><button class="w3-button w3-indigo">Login with Facebook</button>
+                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i class="fa fa-bars"></i>
+    </a>
+                  <button class="w3-button w3-red">Login with Google+</button></CENTER>
+            </p>
+            </div>
+        </td>
+
+    </tr>
+</table>
+<footer class="w3-container w3-deep-orange w3-center w3-margin-top">
+  <p>เว็บไซต์แนะนำร้านค้า และส่วนลด ในจังหวัดหนองคาย</p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+</html> 
